@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tuesday, 10 September 2013"
+            android:id="@+id/date_title"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginStart="85dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="07:08 PM"
+            android:id="@+id/time_title"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:background="@drawable/titlebar_background"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout2">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bee_smart_icon"
+                    android:id="@+id/imageView"
+                    android:layout_marginStart="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="BETV"
+                    android:id="@+id/logo_title"
+                    android:layout_centerVertical="true"
+                    android:textSize="50dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_marginStart="34dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/divider_vertical"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/linearLayout"></LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/selected_channel_icon"
+                                android:src="@drawable/abc_tv_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="ABC TV"
+                                android:id="@+id/selected_channel_name"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/selected_channel_icon"
+                                android:layout_marginStart="20dp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="07:00 PM - 07:30 PM Monkey Life: Espisode 6"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/channel_program_title" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tuesday, 10 September"
+        android:id="@+id/date_status"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_marginTop="50dp"
+        android:layout_alignStart="@+id/relativeLayout3" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@+id/date_status"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="59dp"
+        android:id="@+id/relativeLayout3">
+
+        <view
+            android:id="@+id/channel_listview"
+            class="android.support.v7.widget.RecyclerView"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"/>
+
+        <view
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:id="@+id/program_listview"
+            android:layout_marginStart="10dp"
+            class="android.support.v7.widget.RecyclerView"
+            android:layout_toEndOf="@+id/channel_listview"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="07:00 PM"
+        android:id="@+id/txt_prev_time"
+        android:layout_above="@+id/relativeLayout3"
+        android:layout_toEndOf="@+id/date_status"
+        android:layout_marginStart="107dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="08:00 PM"
+        android:id="@+id/txt_curr_time"
+        android:layout_alignTop="@+id/txt_prev_time"
+        android:layout_toEndOf="@+id/txt_prev_time"
+        android:layout_marginStart="149dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="09:00 PM"
+        android:id="@+id/txt_next_time"
+        android:layout_marginEnd="81dp"
+        android:layout_alignTop="@+id/txt_curr_time"
+        android:layout_alignEnd="@+id/relativeLayout3" />
+
+</RelativeLayout>

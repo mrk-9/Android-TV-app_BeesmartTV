@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tuesday, 10 September 2013"
+            android:id="@+id/date_title"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginStart="85dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="07:08 PM"
+            android:id="@+id/time_title"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:background="@drawable/titlebar_background"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout2">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bee_smart_"
+                        android:id="@+id/imageView"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="BETV"
+                        android:id="@+id/logo_title"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imageView"
+                        android:textSize="40dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/divider_vertical"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/linearLayout"></LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_centerVertical="true">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/selected_channel_icon"
+                                android:src="@drawable/abc_tv_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="ABC TV"
+                                android:id="@+id/selected_channel_name"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/selected_channel_icon"
+                                android:layout_marginStart="20dp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/relativeLayout3">
+
+        <view
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:id="@+id/channel_listview"
+            class="android.support.v7.widget.RecyclerView" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/channel_listview"
+            android:layout_marginStart="10dp"
+            android:id="@+id/thumbnail_view">
+
+            <VideoView
+                android:id="@+id/videoView_thumb"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/loadingView_thumb">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/logoImage"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/logo_video_view"/>
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/progressBar_thumb"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:indeterminate="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Loading please wait......"
+                    android:id="@+id/error_txt_thumb"
+                    android:layout_below="@+id/progressBar_thumb"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#ffffff" />
+
+                <RelativeLayout
+                    android:layout_width="700dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_above="@+id/error_txt_thumb"
+                    android:background="@drawable/customborder"
+                    android:id="@+id/status_bar_thumb"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/channel_name_bar_thumb">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="ABC TV"
+                            android:id="@+id/playedChannelName_thumb"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="61dp"
+                            android:textColor="#ffffff" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#597fcb"
+                        android:layout_below="@+id/channel_name_bar_thumb"
+                        android:id="@+id/linearLayout2"></LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/linearLayout2">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Now is playing : No Chs Message"
+                                android:id="@+id/textView2"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="#ffffff" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Ready for Playing : No Chs Message"
+                                android:id="@+id/textView3"
+                                android:layout_below="@id/textView2"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="#ffffff" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
